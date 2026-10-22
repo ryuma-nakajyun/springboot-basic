@@ -1,5 +1,5 @@
 # Spring Boot の基本基礎
-- Spring Boot を一言でいうと、JavaでWebアプリやAPIを素早く作るためのフレームワークです。
+Spring Boot を一言でいうと、JavaでWebアプリやAPIを素早く作るためのフレームワークです。
 
 ## 目的
 - springbootの概念を把握する.
@@ -16,7 +16,8 @@
 
 ## SpringBootが解決
 Spring Bootが解決したこと  
-例えば REST API を1本作るだけなら、
+例えば  
+REST API を1本作るだけなら、
 ```java
 @RestController
 public class HelloController {
@@ -30,7 +31,7 @@ public class HelloController {
 だけで動きます。
 
 起動も
-```text
+```bash
 mvn spring-boot:run
 ```
 だけです。
@@ -122,9 +123,13 @@ Spring Boot
 - AWS  
 「Spring Boot」は、ほとんどの場合 「Web APIや業務システムを作るための標準フレームワーク」 を意味しています。  
 
-参考：AI先生
+### 参考
+---
+- AI先生
+- spring boot関連の書籍
 
-## memo
+### memo
+---
 - 
 - 
 - 

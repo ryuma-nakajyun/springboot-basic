@@ -9,12 +9,12 @@
 Linux上で Spring Boot最小構成プロジェクトをコマンドだけで作る ならこんな感じです。
 
 ### プロジェクト作成
-```text
+```bash
 mkdir -p spring-sample/src/main/java/com/example/demo  
 cd spring-sample
 ```
 ### pom.xml作成
-```text
+```xml
 cat > pom.xml <<'EOF'
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -71,7 +71,6 @@ public class DemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
-
 }
 EOF
 ```
@@ -91,18 +90,19 @@ public class HelloController {
     public String hello() {  
         return "Hello Spring Boot!";  
     }  
-
 }
 EOF
 ```
 
 ### 起動
+```bash
 mvn spring-boot:run  
-
+```
 ### 動作確認  
 別ターミナルで  
+```bash
 curl http://localhost:8080/hello  
-
+```
 ### 結果  
 Hello Spring Boot!  
 
@@ -125,53 +125,58 @@ spring-sample
 ## パターン2 
 Spring Boot の学習用なら、Linuxに Java + Maven + Spring Boot を入れれば十分です。  
 ### 1. Java確認
-```text
+```bash
 java -version
 ```  
 入っていなければ（Ubuntu系）
-```text  
+```bash
 sudo apt update  
 sudo apt install openjdk-17-jdk
 ```  
 確認
-```text
+```bash
 java -version  
 ```
 
 ### 2. Mavenインストール
-```text
+```bash
 mvn -version
 ```  
 入っていなければ
-```text
+```bash
 sudo apt install maven
 ```  
 確認
-```text  
+```bash
 mvn -version
 ```
 
 ### 3. Spring Bootプロジェクト作成
-```text
+```bash
 mkdir spring-sample  
 cd spring-sample  
 ```
-Spring Initializrで作成したプロジェクトを配置するか、Gitから取得します。 例  
-```text
+Spring Initializrで作成したプロジェクトを配置
+するか、  
+Gitから取得します。　　
+例  
+```bash
 git clone https://github.com/spring-projects/spring-petclinic.git  
 ```
 
 ### 4. 起動  
 プロジェクト直下で  
-- ./mvnw spring-boot:run  ※これは動作できなかった.
-- mvn spring-boot:run  ※ここでエラー情報がトレースされたことを確認した.
+```bash
+./mvnw spring-boot:run  ※これは動作できなかった.
+mvn spring-boot:run  ※ここでエラー情報がトレースされたことを確認した.
+```
 
 ### 5. 動作確認
 - ブラウザ:http://localhost:8080
 - コマンド：curl http://localhost:8080  
 
 ### 6. Jar化
-```text
+```bash
 mvn clean package  
 ```
 作成物
@@ -179,12 +184,12 @@ mvn clean package
 target/*.jar
 ```  
 実行
-```text  
+```bash
 java -jar target/app.jar  
 ```
 
 ## Ansibleでやるなら
-```text 
+```yaml
 - hosts: localhost
   become: yes
 
@@ -207,9 +212,12 @@ java -jar target/app.jar
 - mvn spring-boot:run  
 を行うと、spring bootの最小構成のプロジェクトが作成できる.
 
-参考:AI先生  
+### 参考
+- AI先生
+- spring boot関連の書籍
 
-## memo
+### memo
+--- 
 - 次に Spring Boot + PostgreSQL接続 をやると、いいらしい.
 - 
 - 

@@ -10,8 +10,6 @@ bin/
 *.ear
 
 # ===== Logs =====
-logs/
-log/
 *.log
 
 # ===== Maven =====
